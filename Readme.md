@@ -19,3 +19,4 @@ How to Use
 
 This will build everything up to Python, for now.
 
+5. Start `./default/bin/python` to launch Python
