@@ -1,0 +1,46 @@
+# distutils_package.yaml
+# Use for installing Python packages with the native distutils package
+# You should use the setuptools_package.yaml base if you depend on setuptools.
+
+extends: [base_package]
+
+dependencies:
+  build: [python]
+  run: [python]
+
+build_stages:
+
+- name: setup_dirs
+  after: prologue
+  handler: bash
+  bash: |
+    export PYTHONPATH=${ARTIFACT}/{{python_site_packages_rel}}:$PYTHONPATH
+    mkdir -p ${ARTIFACT}/{{python_site_packages_rel}}
+
+- name: install
+  after: setup_dirs
+  handler: bash
+  bash: |
+    ${PYTHON} setup.py install --prefix=${ARTIFACT}
+
+  # Remove easy_install pth files
+- name: cleanup
+  after: install
+  handler: bash
+  bash: |
+    rm -rf ${ARTIFACT}/{{python_site_packages_rel}}/*.pth
+
+profile_links:
+
+  - name: python_packages
+    link: 'lib/python{{pyver}}/site-packages/*'
+    dirs: true
+
+  - name: python_exclude
+    after: python_packages
+    before: everything
+    exclude: 'lib/python{{pyver}}/site-packages/**/*'
+
+when_build_dependency:
+  - prepend_path: PYTHONPATH
+    value: '${ARTIFACT}/lib/python{{pyver}}/site-packages'

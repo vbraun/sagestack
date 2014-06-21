@@ -1,0 +1,21 @@
+extends:
+- spkg_install
+- copy_patches
+
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/bzip2/bzip2-1.0.6.20140317.tar.gz
+  key: tar.gz:aducy6ybplnbwvkakckpxvked4yc6zc3
+
+build_stages:
+
+- name: copy_patches
+  after: prologue
+  before: run_spkg_install
+  handler: bash
+  files: [patches/autotools/*]
+  bash: |
+    # copy_patches_autotools
+    ln -s _hashdist/patches patches
+      
+

@@ -1,0 +1,15 @@
+# Environment variables for building Sage
+
+parameters:
+  
+  SAGE_ROOT: /home/vbraun/Code/Hit/sage
+
+  MAKE: make
+  
+  CC:  gcc
+  CPP: cpp
+
+  CXX: g++
+
+  FC:  gfortran
+

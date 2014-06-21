@@ -1,0 +1,78 @@
+extends: [autotools_package]
+
+sources:
+ - url: http://python.org/ftp/python/2.7.6/Python-2.7.6.tgz
+   key: tar.gz:thdimc3qs5567ikzaau7vyes3wyy3mow
+
+dependencies:
+  build: [zlib, launcher, ncurses, readline, {{build_with}}]
+  run: []
+
+build_stages:
+  - when: link == 'shared'
+    name: configure
+    mode: override
+    append: {LDFLAGS: "-Wl,-rpath=${ARTIFACT}/lib"}
+    extra: ['--enable-shared']
+
+# Make sure extension modules were built correctly. This should be part of the
+# Python buildsystem, but unfortunately currently it will silently succeed even
+# if any of the modules below fail.
+  - name: test_modules
+    after: install
+    handler: bash
+    bash: |
+      echo "import math"
+      $ARTIFACT/bin/python -c "import math"
+      echo "    ok"
+
+      # Test bzip2:
+      echo "import bz2"
+      $ARTIFACT/bin/python -c "import bz2"
+      echo "    ok"
+
+      # Make sure sufficient crypto support is available in the built python.
+      echo "import hashlib"
+      $ARTIFACT/bin/python -c "import hashlib"
+      echo "    ok"
+
+      # Make sure SSL works
+      echo "import _ssl"
+      $ARTIFACT/bin/python -c "import _ssl"
+      echo "    ok"
+
+      echo "import _hashlib"
+      $ARTIFACT/bin/python -c "import _hashlib"
+      echo "    ok"
+
+      # Make sure HTTPS works
+      echo "Test https support in httplib"
+      $ARTIFACT/bin/python -c "import httplib; assert hasattr(httplib, 'HTTPS')"
+      echo "    ok"
+
+      # Test sqlite3
+      echo "import _sqlite3"
+      $ARTIFACT/bin/python -c "import _sqlite3"
+      echo "    ok"
+
+
+when_build_dependency:
+  - set: PYTHON
+    value: ${ARTIFACT}/bin/python
+  - prepend_path: PATH
+    value: '${ARTIFACT}/bin'
+
+profile_links:
+  - name: python_binaries
+    before: everything
+    launcher: 'bin/*'
+
+  - name: python_packages
+    link: 'lib/python{{pyver}}/site-packages/*'
+    dirs: true
+
+  - name: python_exclude
+    after: python_packages
+    before: everything
+
+    exclude: 'lib/python{{pyver}}/site-packages/**/*'

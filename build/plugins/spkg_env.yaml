@@ -1,0 +1,20 @@
+# Environment when building Sage packages
+
+
+build_stages:
+
+- name: environment_variables
+  after: prologue
+  handler: bash
+  bash: |
+    # spkg_env    
+    export SAGE_LOCAL=${ARTIFACT}
+    export SAGE_ETC=${ARTIFACT}/etc
+    export SAGE_SHARE=${ARTIFACT}/share
+    export SAGE_EXTCODE=${ARTIFACT}/share/sage/ext
+    export MAKE={{MAKE}}
+    export CC={{CC}}
+    export CPP={{CPP}}
+    export CXX={{CXX}}
+    export FC={{FC}}
+

@@ -1,0 +1,35 @@
+# Sage profile for hashdist
+
+package_dirs:
+- hashstack/pkgs
+- hashstack/base
+
+hook_import_dirs:
+- hashstack/base
+
+parameters:
+  BASH: /bin/bash
+  PROLOGUE: | # by default, PROLOGUE is a no-op
+
+  pyver: '2.7'  # as in used in lib/pythonX.Y/site-packages
+  python_site_packages_rel: 'lib/python2.7/site-packages'
+
+  python_host_packages: '/usr/lib/python2.7/dist-packages'
+  use_python_host_packages: false
+
+  platform: linux
+  PATH: /usr/bin:/bin
+
+
+packages:
+  ipython:
+
+  python:
+    host: false
+    build_with: |
+      bzip2, sqlite
+
+  blas:
+    use: host-blas
+
+

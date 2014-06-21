@@ -1,0 +1,54 @@
+extends: [base_package]
+
+when platform == 'linux':
+  dependencies:
+    build: [patchelf]
+
+sources:
+- url: http://bzip.org/1.0.6/bzip2-1.0.6.tar.gz
+  key: tar.gz:ukci6nh42xlm6r666acgd7fvfcqeqtmo
+
+build_stages:
+
+- name: patch
+  before: make-configure
+  files: [clang-fix.patch]
+  handler: bash
+  bash: |
+    patch -up1 < _hashdist/clang-fix.patch
+
+- name: make-configure
+  after: prologue
+  handler: bash
+  when platform == 'linux':
+    bash: |
+      make -f Makefile-libbz2_so
+  when platform != 'linux':
+    bash: |
+      make -f Makefile
+
+- name: make-install
+  after: make-configure
+  handler: bash
+  bash: |
+    make clean
+    make install PREFIX=${ARTIFACT}
+    cp -av libbz2.* ${ARTIFACT}/lib
+    rm -v ${ARTIFACT}/bin/{bunzip2,bzcat}
+
+- name: final
+  after: make-install
+  handler: bash
+  when platform == 'linux':
+    bash: |
+      cp -v bzip2-shared ${ARTIFACT}/bin/bzip2
+      ln -sv bzip2 ${ARTIFACT}/bin/bunzip2
+      ln -sv bzip2 ${ARTIFACT}/bin/bzcat
+      ln -sv ${ARTIFACT}/lib/libbz2.so.1.0 ${ARTIFACT}/lib/libbz2.so
+      ${PATCHELF} --set-rpath ${ARTIFACT}/lib ${ARTIFACT}/bin/bzip2
+
+  when platform != 'linux':
+    bash: |
+      cp -v bzip2 ${ARTIFACT}/bin/bzip2
+      ln -sv bzip2 ${ARTIFACT}/bin/bunzip2
+      ln -sv bzip2 ${ARTIFACT}/bin/bzcat

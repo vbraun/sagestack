@@ -1,0 +1,10 @@
+build_stages:
+
+- name: copy_patches
+  after: prologue
+  before: run_spkg_install
+  files: [patches/*]
+  handler: bash
+  bash: |
+    # copy_patches
+    ln -s _hashdist/patches patches

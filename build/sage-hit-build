@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+hit --config-file hashdist_config.yaml build sage_profile.yaml 
