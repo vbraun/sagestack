@@ -2,7 +2,7 @@ Sage on Hashdist
 ================
 
 This is an experimental conversion of the sage packaging system to
-hastdist. It does'nt build Sage (yet), only third-party packages.
+hastdist. It doesn't build Sage (yet), only third-party packages.
 
 How to Use
 ----------
