@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: dot2tex
+  category: optional
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/dot2tex/dot2tex-20120520.tar.bz2
+  key: tar.gz:ukci6nh42xlm6r666acgd7fvfcqeqtmo
+
+

@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: maxima
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [ecl]
+  run: [ecl]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/maxima/maxima-5.33.0.tar.bz2
+  key: tar.bz2:kua6bt7v5mwckbijfut2c6iuixebacyc
+
+

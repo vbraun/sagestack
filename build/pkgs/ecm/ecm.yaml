@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: ecm
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [mpir]
+  run: [mpir]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/ecm/ecm-6.4.4.tar.bz2
+  key: tar.bz2:7skna2ewt3zwjxqm6dsl7k66t5xo7bgv
+
+

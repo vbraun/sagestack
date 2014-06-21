@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: singular
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir, ntl, readline, mpfr]
+  run: [mpir, ntl, readline, mpfr]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/singular/singular-3.1.6.tar.bz2
+  key: tar.bz2:tiuo3zodw4lg66rqxvj2w7d63cayrome
+
+

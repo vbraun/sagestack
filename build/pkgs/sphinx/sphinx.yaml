@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: sphinx
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [python, setuptools, docutils, jinja2, pygments]
+  run: [python, setuptools, docutils, jinja2, pygments]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/sphinx/sphinx-1.1.2.tar.bz2
+  key: tar.bz2:sknojv3c2bdo6lnkvo5expk6sd34qjt4
+
+

@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: sympy
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [python]
+  run: [python]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/sympy/sympy-0.7.4.tar.gz
+  key: tar.gz:sb56j3du4f5sqw5tqzt5dx44l47k24js
+
+

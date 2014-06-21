@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: pillow
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [python, setuptools]
+  run: [python, setuptools]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/pillow/Pillow-2.2.2.tar.gz
+  key: tar.gz:woy6dhd7iqr4lbzunqjtm2jfo2bzjmd3
+
+

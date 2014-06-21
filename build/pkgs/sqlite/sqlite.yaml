@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: sqlite
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [readline]
+  run: [readline]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/sqlite/sqlite-3.8.4.3.tar.bz2
+  key: tar.bz2:mf53dkhflvhx37i6h7rnc2p2t4urs3hp
+
+

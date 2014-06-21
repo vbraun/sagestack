@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: cvxopt
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [numpy, atlas, cephes, gsl, glpk, matplotlib]
+  run: [numpy, atlas, cephes, gsl, glpk, matplotlib]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/cvxopt/cvxopt-1.1.6.tar.bz2
+  key: tar.bz2:iwqbgc5hv7ql3fr74th4v3tmvpv64qcn
+
+

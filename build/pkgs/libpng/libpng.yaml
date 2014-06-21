@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: libpng
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [zlib]
+  run: [zlib]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/libpng/libpng-1.2.51.tar.gz
+  key: tar.gz:f7y3m4nytmcoskelokbkgp3jv7gr3md3
+
+

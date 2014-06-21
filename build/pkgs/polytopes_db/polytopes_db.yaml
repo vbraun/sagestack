@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: polytopes_db
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/polytopes_db/polytopes_db-20120220.tar.bz2
+  key: tar.bz2:vcguut7rzs23xaw26ghy5agccoi2ff37
+
+

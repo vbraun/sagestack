@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: libm4ri
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [libpng, pkgconf]
+  run: [libpng, pkgconf]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/libm4ri/libm4ri-20130416.tar.bz2
+  key: tar.bz2:wxevvxr7b5tycezigvwumbpdf4l3hoze
+
+

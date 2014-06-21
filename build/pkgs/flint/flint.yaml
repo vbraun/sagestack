@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: flint
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir, mpfr, ntl]
+  run: [mpir, mpfr, ntl]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/flint/flint-2.4.3.tar.gz
+  key: tar.gz:snmfzuzbywrpvuctzeb3u7gzi72u3zy5
+
+

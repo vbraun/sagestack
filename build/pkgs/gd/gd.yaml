@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: gd
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [libpng, freetype, iconv]
+  run: [libpng, freetype, iconv]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/gd/gd-2.0.35.tar.bz2
+  key: tar.bz2:eak4j24mfjry33i4cb24qvw66rgjt63s
+
+

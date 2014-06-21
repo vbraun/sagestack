@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: python
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [zlib, bzip2, pkgconf, readline, sqlite, libpng]
+  run: [zlib, bzip2, pkgconf, readline, sqlite, libpng]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/python/python-2.7.7.tar.gz
+  key: tar.gz:p5e4bjtqllmj3esrqhrh2cvkajpoi4y4
+
+

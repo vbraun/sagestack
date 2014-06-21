@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: symmetrica
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/symmetrica/symmetrica-2.0.tar.bz2
+  key: tar.bz2:luvtbslcv2tn3helu4ii4jqbsray2sxa
+
+

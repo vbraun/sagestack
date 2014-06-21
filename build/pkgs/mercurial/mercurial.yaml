@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: mercurial
+  category: optional
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/mercurial/mercurial-2.2.2.tar.bz2
+  key: tar.gz:ukci6nh42xlm6r666acgd7fvfcqeqtmo
+
+

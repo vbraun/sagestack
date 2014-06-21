@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: elliptic_curves
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [python, sqlite]
+  run: [python, sqlite]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/elliptic_curves/elliptic_curves-0.7.tar.bz2
+  key: tar.bz2:6vkinyzinahcbakk54lpcrc7cpg3ku5y
+
+

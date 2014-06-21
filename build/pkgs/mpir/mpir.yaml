@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: mpir
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [iconv]
+  run: [iconv]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/mpir/mpir-2.6.0.tar.bz2
+  key: tar.bz2:hhsyw6qkmad3hfcf3diatpgwvmyinrqr
+
+

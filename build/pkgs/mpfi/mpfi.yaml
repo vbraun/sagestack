@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: mpfi
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [mpir, mpfr]
+  run: [mpir, mpfr]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/mpfi/mpfi-1.5.1.tar.bz2
+  key: tar.bz2:ixbfqwx55j3gsljcpnacfbun4sssrjia
+
+

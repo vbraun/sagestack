@@ -1,11 +1,22 @@
+sage:   # for the Sage UI only
+  name: bzip2
+  category: standard
+
+
 extends:
 - spkg_install
 - copy_patches
 
 
+dependencies:
+  build: [pkgconf]
+  run: [pkgconf]
+
 sources:
 - url: http://www.sagemath.org/packages/upstream/bzip2/bzip2-1.0.6.20140317.tar.gz
   key: tar.gz:aducy6ybplnbwvkakckpxvked4yc6zc3
+
+
 
 build_stages:
 
@@ -17,5 +28,4 @@ build_stages:
   bash: |
     # copy_patches_autotools
     ln -s _hashdist/patches patches
-      
 

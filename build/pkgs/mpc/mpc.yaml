@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: mpc
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir, mpfr]
+  run: [mpir, mpfr]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/mpc/mpc-1.0.2.tar.gz
+  key: tar.gz:wvq7ktmki6oo4o6ishxfe427dd7ym4jl
+
+

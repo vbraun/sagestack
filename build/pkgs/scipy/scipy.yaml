@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: scipy
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [atlas, numpy]
+  run: [atlas, numpy]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/scipy/scipy-0.14.0.tar.gz
+  key: tar.gz:jna2hzv7c6g7dr7q54575k7r6vtbamu2
+
+

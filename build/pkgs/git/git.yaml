@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: git
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [zlib, python]
+  run: [zlib, python]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/git/git-1.8.4.4.tar.bz2
+  key: tar.bz2:v4sdvskucatyyrtcbkqm6be6fodp6fd4
+
+

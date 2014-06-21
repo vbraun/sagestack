@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: ncurses
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [pkgconf]
+  run: [pkgconf]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/ncurses/ncurses-5.9.20131221.tar.bz2
+  key: tar.bz2:7d7ztwjtigwcayz3ophkjvjiyga4jy7u
+
+

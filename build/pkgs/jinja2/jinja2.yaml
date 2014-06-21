@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: jinja2
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [python, setuptools, docutils]
+  run: [python, setuptools, docutils]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/jinja2/jinja2-2.5.5.tar.bz2
+  key: tar.bz2:piy2wlihwt5chvgfd5c5u65s2nfgzxg6
+
+

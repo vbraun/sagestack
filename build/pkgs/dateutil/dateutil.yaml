@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: dateutil
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [python, six, setuptools]
+  run: [python, six, setuptools]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/dateutil/dateutil-2.2.tar.gz
+  key: tar.gz:6zwiek5y5pv62dv3ep445yq7pus6pzkr
+
+

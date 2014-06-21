@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: cliquer
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/cliquer/cliquer-1.21.tar.bz2
+  key: tar.bz2:eu7gqyiz6i6du7xxa5qhnr7mnyko3yb2
+
+

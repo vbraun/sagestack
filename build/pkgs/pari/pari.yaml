@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: pari
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [readline, mpir, pari_galdata, pari_seadata_small]
+  run: [readline, mpir, pari_galdata, pari_seadata_small]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/pari/pari-2.5.5b.tar.bz2
+  key: tar.bz2:pqesvzvcddt4vglnarctwubxslnrtz6i
+
+

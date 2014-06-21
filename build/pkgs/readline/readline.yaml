@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: readline
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [ncurses]
+  run: [ncurses]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/readline/readline-6.2.tar.bz2
+  key: tar.bz2:zuhn776esdzx3zdblwrloyhvg3rebmfx
+
+

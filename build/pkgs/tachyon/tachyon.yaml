@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: tachyon
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [libpng]
+  run: [libpng]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/tachyon/tachyon-0.98.9.tar.bz2
+  key: tar.bz2:5ceiuqigcdrhe3okgl2a6mp7gsudzndu
+
+

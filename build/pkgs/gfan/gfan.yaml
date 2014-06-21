@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: gfan
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir, cddlib]
+  run: [mpir, cddlib]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/gfan/gfan-0.5.tar.bz2
+  key: tar.bz2:rfouvwb6qwwoxrbkdpynyxx2tck43emg
+
+

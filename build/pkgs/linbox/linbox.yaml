@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: linbox
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir, ntl, givaro, mpfr, libfplll, iml, libm4ri, libm4rie, fflas_ffpack]
+  run: [mpir, ntl, givaro, mpfr, libfplll, iml, libm4ri, libm4rie, fflas_ffpack]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/linbox/linbox-1.3.2.tar.bz2
+  key: tar.bz2:dirdfg7ooecnurkadhlk74st4joacdll
+
+

@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: mpfr
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir]
+  run: [mpir]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/mpfr/mpfr-3.1.2.tar.bz2
+  key: tar.bz2:lpdj2uippwnfmffnqgyacq6velgfj2vi
+
+

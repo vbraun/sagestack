@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: sqlalchemy
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [python, setuptools]
+  run: [python, setuptools]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/sqlalchemy/sqlalchemy-0.5.8.tar.bz2
+  key: tar.bz2:7lx2ebsm7wd5x5jmxtpzzryx75qnrkui
+
+

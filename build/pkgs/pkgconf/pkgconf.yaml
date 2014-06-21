@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: pkgconf
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/pkgconf/pkgconf-0.9.4.tar.bz2
+  key: tar.bz2:hv6w5s53q2aulicikhazuvw36tfax47l
+
+

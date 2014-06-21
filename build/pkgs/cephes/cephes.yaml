@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: cephes
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/cephes/cephes-2.8.tar.bz2
+  key: tar.bz2:ulg5xs3fouduqk7xm4qfvtokds77rcnw
+
+

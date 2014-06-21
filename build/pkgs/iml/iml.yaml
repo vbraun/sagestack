@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: iml
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir, gsl, atlas]
+  run: [mpir, gsl, atlas]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/iml/iml-1.0.3.tar.bz2
+  key: tar.bz2:gjvxcbrjdbitbnqill4dhbio645wvyvs
+
+

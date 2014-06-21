@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: eclib
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [pari, ntl, flint]
+  run: [pari, ntl, flint]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/eclib/eclib-20140128.tar.bz2
+  key: tar.bz2:2iiqhnvp3gx5bxcxipl3dg3vms2uxgap
+
+

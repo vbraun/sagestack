@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: ppl
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir, glpk]
+  run: [mpir, glpk]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/ppl/ppl-1.1.tar.bz2
+  key: tar.bz2:3zjbwir2fh45smbkfhaxwxuq37m4nunf
+
+

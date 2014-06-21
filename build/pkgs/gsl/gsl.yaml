@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: gsl
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [atlas]
+  run: [atlas]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/gsl/gsl-1.15.tar.bz2
+  key: tar.bz2:jedajpfd5g2leipaj6w7uqvukabvo5gy
+
+

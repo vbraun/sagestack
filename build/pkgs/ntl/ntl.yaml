@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: ntl
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir, gf2x]
+  run: [mpir, gf2x]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/ntl/ntl-6.1.0.tar.bz2
+  key: tar.bz2:i336tdroznhxhuapc4yx2qpew3j7gxii
+
+

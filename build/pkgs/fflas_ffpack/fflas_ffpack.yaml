@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: fflas_ffpack
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir, givaro, gsl, atlas]
+  run: [mpir, givaro, gsl, atlas]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/fflas_ffpack/fflas_ffpack-1.6.0.tar.bz2
+  key: tar.bz2:klv6laslulqvuz6dvk2et2gg6icgi2pa
+
+

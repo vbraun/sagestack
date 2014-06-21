@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: gf2x
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/gf2x/gf2x-1.1.tar.bz2
+  key: tar.bz2:ooy27osk7tfqcebbbdcthelsihqbsnk7
+
+

@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: graphs
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/graphs/graphs-20120404.tar.bz2
+  key: tar.bz2:mf7zox7qjahipziifaomng2hscgc3t2n
+
+

@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: zn_poly
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir, python]
+  run: [mpir, python]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/zn_poly/zn_poly-0.9.tar.bz2
+  key: tar.bz2:sussl3qreccuwjtwmkj5p4q75ijf42bp
+
+

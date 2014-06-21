@@ -1,0 +1,13 @@
+sage:
+  name: sage_c_library
+  category: standard
+  summary: C Support Library for Sage
+
+extends: [base_package]
+
+dependencies:
+- build: [scons]
+- run: [mpir, ntl, pari, python]
+
+build_stages:
+

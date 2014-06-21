@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: libm4rie
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [libm4ri, givaro, ntl]
+  run: [libm4ri, givaro, ntl]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/libm4rie/libm4rie-20130416.tar.bz2
+  key: tar.bz2:vaz3egc5nd3qyjhaffrob6lqqf7illvd
+
+

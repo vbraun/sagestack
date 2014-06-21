@@ -1,0 +1,9 @@
+sage:
+  name: sage_noarch
+  category: standard
+  summary: Architecture-Independent Files of Sage
+
+extends: [base_package]
+
+build_stages:
+

@@ -5,7 +5,11 @@ Tools for upgrading Sage spkgs to hashdist
 
 import os
 import re
-from textutil import dedent
+import hashlib
+import base64
+from textwrap import dedent
+
+UPSTREAM='/home/vbraun/Sage/git-temp/upstream'
 
 
 PACKAGE_YAML_TEMPLATE = """
@@ -13,16 +17,19 @@ sage:   # for the Sage UI only
   name: {name}
   category: {category}
 
+
 extends:
 - spkg_install
 {copy_patches}
 
 
+dependencies:
+  build: [{dependencies}]
+  run: [{dependencies}]
+
 sources:
 - url: {url}
-  key: tar.gz:aducy6ybplnbwvkakckpxvked4yc6zc3
-
-build_stages:
+  key: {key}
 
 {extra_build_stages}
 
@@ -31,6 +38,9 @@ build_stages:
 
 EXTRA_BUILD_STAGES = {
     'bzip2': dedent("""
+
+        build_stages:
+
         - name: copy_patches
           after: prologue
           before: run_spkg_install
@@ -161,25 +171,11 @@ DEPENDENCIES = {
     'cephes': [],
 }
 
-'- copy_patches'
 
 
 
 
 PKGS = os.path.abspath(os.path.join(os.path.dirname(__file__), 'pkgs'))
-
-def upgrade_all():
-    """
-    Upgrade all packages
-    """
-    for name in os.listdir(PKGS):
-        fullname = os.path.join(PKGS, name)
-        if not os.path.isdir(fullname):
-            continue
-        if not os.path.exists(os.path.join(fullname, 'package-version.txt')):
-            continue
-        print('upgrading ' + name)
-        upgrade(name, fullname)
 
 
 class OldPkg(object):
@@ -197,10 +193,6 @@ class OldPkg(object):
         Upgrade a single package
         """
         package_yaml = self.package_yaml()
-
-        print package_yaml
-        return
-
         with open(self.yaml_filename, 'w') as yaml:
             yaml.write(package_yaml)
 
@@ -209,7 +201,7 @@ class OldPkg(object):
             version_patchlevel = f.read().strip()
         return re.sub(r'\.p[0-9]*', '', version_patchlevel)
 
-    def old_tarball(self):
+    def old_tarball_pattern(self):
         with open(os.path.join(self.pkg_dir, 'checksums.ini'), 'r') as f:
             for line in f.readlines():
                 if line.startswith('tarball='):
@@ -218,35 +210,77 @@ class OldPkg(object):
                     sha1 = line[5:].strip()
         return tarball
 
+    @property
+    def tarball(self):
+        version = self.old_version()
+        tarball = self.old_tarball_pattern()
+        return tarball.replace('VERSION', version)
+
     def url(self):
         return 'http://www.sagemath.org/packages/upstream/{name}/{tarball}'.format(
             name=self.name, tarball=self.tarball)
+
+    def key(self):
+        version = self.old_version()
+        pattern = self.old_tarball_pattern()
+        tarball = pattern.replace('VERSION', version)
+        ext = pattern.split('VERSION.')[1]
+        filename = os.path.join(UPSTREAM, tarball)
+        sha = hashlib.sha256()
+        with open(filename, 'rb') as f:
+            while True:
+                buf = f.read(0x100000)
+                if not buf:
+                    break
+                sha.update(buf)
+        return ext + ':' + base64.b32encode(sha.digest()[:20]).lower()
     
     def has_patches(self):
         return os.path.isdir(os.path.join(self.pkg_dir, 'patches'))
 
     def has_check(self):
-        return os.path.exists(os.path.join(self.pkg_dir, 'spkg-check')):
+        return os.path.exists(os.path.join(self.pkg_dir, 'spkg-check'))
     
     def package_yaml(self):
         """
         Package.yaml from old-style directory
         """
-        if name in DEPENDENCIES:
+        if self.name in DEPENDENCIES:
             category = 'standard'
-            dependencies = DEPENDENCIES[name]
+            dependencies = ', '.join(DEPENDENCIES[self.name])
+            key = self.key()
         else:
             category = 'optional'
+            dependencies = ''
+            key = 'tar.gz:ukci6nh42xlm6r666acgd7fvfcqeqtmo'
         result = PACKAGE_YAML_TEMPLATE.format(
             name=self.name,
+            dependencies=dependencies,
             category=category,
-            url=self.url,
-            copy_patches='- copy_patches' if self.has_patches() else ''
+            url=self.url(),
+            key=key,
+            copy_patches='- copy_patches' if self.has_patches() else '',
+            extra_build_stages=EXTRA_BUILD_STAGES.get(self.name, ''),
         )
         result += '\n'
         return result
     
     
 
+
+def upgrade_all():
+    """
+    Upgrade all packages
+    """
+    for name in os.listdir(PKGS):
+        fullname = os.path.join(PKGS, name)
+        if not os.path.isdir(fullname):
+            continue
+        if not os.path.exists(os.path.join(fullname, 'package-version.txt')):
+            continue
+        print('upgrading ' + name)
+        pkg = OldPkg(name, fullname)
+        pkg.upgrade()
+
 if __name__ == '__main__':
-    update_all()
+    upgrade_all()

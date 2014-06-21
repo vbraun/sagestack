@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: gap
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [ncurses, readline, mpir]
+  run: [ncurses, readline, mpir]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/gap/gap-4.7.5.tar.bz2
+  key: tar.bz2:xnp32mnxoubt4cgl43f6l5a5cchqht6d
+
+

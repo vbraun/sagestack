@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: boost_cropped
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/boost_cropped/boost_cropped-1.52.0.tar.bz2
+  key: tar.bz2:hxrur42haxz46xwyh6l5r65dlnrrhvi3
+
+

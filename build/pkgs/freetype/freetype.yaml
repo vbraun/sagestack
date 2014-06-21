@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: freetype
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [libpng]
+  run: [libpng]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/freetype/freetype-2.5.2.tar.bz2
+  key: tar.bz2:j72l2oj2uaihd3d3qsoqgviiuuc2pd4i
+
+

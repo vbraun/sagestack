@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: pygments
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [python, setuptools]
+  run: [python, setuptools]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/pygments/pygments-1.3.1.tar.bz2
+  key: tar.bz2:7bxth2t37dzaudzhb2bnbd4m6m3jnopm
+
+

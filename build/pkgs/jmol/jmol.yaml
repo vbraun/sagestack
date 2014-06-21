@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: jmol
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [sagenb]
+  run: [sagenb]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/jmol/jmol-12.3.27.tar.bz2
+  key: tar.bz2:mh4743u3nvtrwgygpxstxgk43j634nbm
+
+

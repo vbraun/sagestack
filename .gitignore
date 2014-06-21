@@ -16,6 +16,7 @@
 /configure
 /build/Makefile-auto
 /build/Makefile-auto.in
+/build/default
 
 ###################
 # Temporary Files #

@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: lrcalc
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/lrcalc/lrcalc-1.1.6.tar.bz2
+  key: tar.bz2:vgvqupujebuah77cd26apsj7owg5ttfa
+
+

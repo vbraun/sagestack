@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: pkgconfig
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [python, setuptools]
+  run: [python, setuptools]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/pkgconfig/pkgconfig-1.1.0.tar.gz
+  key: tar.gz:oco2v4dxvivthpw2yetqmnzuclbwqnlw
+
+

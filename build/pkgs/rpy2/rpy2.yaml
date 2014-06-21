@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: rpy2
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [python, r]
+  run: [python, r]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/rpy2/rpy2-2.3.8.tar.gz
+  key: tar.gz:eb4jvvwskekz6kvkvbr5lvzo5ph3goh4
+
+

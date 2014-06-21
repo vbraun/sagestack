@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: ipython
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [python]
+  run: [python]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/ipython/ipython-2.1.0.tar.gz
+  key: tar.gz:zkdkmmemjnj6vcqebotxmbtnzgt26swh
+
+

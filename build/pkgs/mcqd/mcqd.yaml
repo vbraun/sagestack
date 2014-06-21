@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: mcqd
+  category: optional
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/mcqd/mcqd-1.0.tar.bz2
+  key: tar.gz:ukci6nh42xlm6r666acgd7fvfcqeqtmo
+
+

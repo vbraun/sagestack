@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: givaro
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [mpir]
+  run: [mpir]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/givaro/givaro-3.7.1.tar.bz2
+  key: tar.bz2:odsiyyvrx7pbwphnlalqcdxazkdagytd
+
+

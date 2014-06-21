@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: cddlib
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir]
+  run: [mpir]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/cddlib/cddlib-094g.tar.bz2
+  key: tar.bz2:7rtorh2z63ajs3bzvu6c2cl27ae5wmmc
+
+

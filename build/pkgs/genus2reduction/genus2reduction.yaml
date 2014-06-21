@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: genus2reduction
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [pari]
+  run: [pari]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/genus2reduction/genus2reduction-0.3.tar.bz2
+  key: tar.bz2:iffeys3reizxkhm44m3vefn44qs6nbc6
+
+

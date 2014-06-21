@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: boehm_gc
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [pkgconf]
+  run: [pkgconf]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/boehm_gc/boehm_gc-7.2d.tar.bz2
+  key: tar.bz2:dude3az6try6tjmwkkvnqt2d6ybsrate
+
+

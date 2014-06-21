@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: lcalc
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [pari, mpfr]
+  run: [pari, mpfr]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/lcalc/lcalc-1.23.tar.bz2
+  key: tar.bz2:qpkckpwc6ocvhmqrsdlnbrvxdovx5ikh
+
+

@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: ratpoints
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir]
+  run: [mpir]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/ratpoints/ratpoints-2.1.3.tar.bz2
+  key: tar.bz2:5xjshbbc6r3gdoffk3ycihzw2ymvqtjp
+
+

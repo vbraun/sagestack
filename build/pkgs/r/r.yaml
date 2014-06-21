@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: r
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [atlas, iconv, readline, pkgconf]
+  run: [atlas, iconv, readline, pkgconf]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/r/r-3.0.2.tar.bz2
+  key: tar.bz2:l5sfadwxfcdzc5u6hogbsbl73gxssc4m
+
+

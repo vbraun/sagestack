@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: polybori
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [python, ipython, scons, boost_cropped, libm4ri, gd]
+  run: [python, ipython, scons, boost_cropped, libm4ri, gd]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/polybori/polybori-0.8.3.tar.bz2
+  key: tar.bz2:lnbgmer55xajbiqln3bmwvxq3wmlb3px
+
+

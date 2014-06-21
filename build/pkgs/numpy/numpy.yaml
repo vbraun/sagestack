@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: numpy
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [python, atlas, pkgconf]
+  run: [python, atlas, pkgconf]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/numpy/numpy-1.8.1.tar.gz
+  key: tar.gz:hvzc7q5msivdjribqnud5auaklgzxn7j
+
+

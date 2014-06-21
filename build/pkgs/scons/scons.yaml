@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: scons
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [python]
+  run: [python]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/scons/scons-1.2.0.tar.bz2
+  key: tar.bz2:u4uhesqiop4ittdcgie2wwqm454fpt7z
+
+

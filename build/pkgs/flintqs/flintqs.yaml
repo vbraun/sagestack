@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: flintqs
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [mpir]
+  run: [mpir]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/flintqs/flintqs-20070817.tar.bz2
+  key: tar.bz2:ir5oy2kgqvefj7pt3tx73jpa7nmkz3yk
+
+

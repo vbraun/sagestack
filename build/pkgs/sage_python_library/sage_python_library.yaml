@@ -1,0 +1,53 @@
+sage:
+  name: sage_noarch
+  category: standard
+  summary: Architecture-Independent Files of Sage
+
+extends: [base_package]
+
+dependencies:
+- build: &build
+  - atlas
+  - cephes
+  - cliquer
+  - cython
+  - ecl
+  - eclib
+  - ecm
+  - flint
+  - libfplll
+  - gd
+  - givaro
+  - glpk
+  - gsl
+  - iml
+  - jinja2
+  - lcalc
+  - libgap
+  - libpng
+  - linbox
+  - libm4ri
+  - libm4rie
+  - mpc
+  - mpfi
+  - mpfr
+  - mpir
+  - ntl
+  - numpy
+  - pari
+  - polybori
+  - ppl
+  - pynac
+  - python
+  - ratpoints
+  - readline
+  - singular
+  - symmetrica
+  - zn_poly
+  - sage_c_library
+- run: *build
+
+
+
+build_stages:
+

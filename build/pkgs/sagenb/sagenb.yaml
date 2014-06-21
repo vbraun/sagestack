@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: sagenb
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [python, setuptools, pexpect, jinja2, sphinx, docutils]
+  run: [python, setuptools, pexpect, jinja2, sphinx, docutils]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/sagenb/sagenb-0.10.8.2.tar
+  key: tar:jm4ksvpf3hqzfxqq76ckwxw3owiv3p5p
+
+

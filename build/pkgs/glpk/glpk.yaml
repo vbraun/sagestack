@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: glpk
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [mpir, zlib]
+  run: [mpir, zlib]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/glpk/glpk-4.44.tar.bz2
+  key: tar.bz2:ogjtjikagefczdgvb7zs5zlkyho45inq
+
+

@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: pari_galdata
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/pari_galdata/pari_galdata-20080411.tar.bz2
+  key: tar.bz2:hu6odtwhpjjds4pvhqrfw6hnrposhyx3
+
+

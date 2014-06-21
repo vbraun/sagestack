@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: zlib
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/zlib/zlib-1.2.8.tar.bz2
+  key: tar.bz2:smqvf3od2fsso2qtwsevmfcj4jbveeew
+
+

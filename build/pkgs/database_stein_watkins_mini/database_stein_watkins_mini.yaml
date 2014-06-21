@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: database_stein_watkins_mini
+  category: optional
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/database_stein_watkins_mini/database_stein_watkins_mini-20070827.tar.bz2
+  key: tar.gz:ukci6nh42xlm6r666acgd7fvfcqeqtmo
+
+

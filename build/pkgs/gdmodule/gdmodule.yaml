@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: gdmodule
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: [python, gd, iconv]
+  run: [python, gd, iconv]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/gdmodule/gdmodule-0.56.tar.bz2
+  key: tar.bz2:d27zvosvws623t4fpheuhrutgvtyorb7
+
+

@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: sympow
+  category: standard
+
+
+extends:
+- spkg_install
+- copy_patches
+
+
+dependencies:
+  build: []
+  run: []
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/sympow/sympow-1.018.1.tar.bz2
+  key: tar.bz2:ntkflhqxoubmitn44oy2nlvlhzxu2jg7
+
+

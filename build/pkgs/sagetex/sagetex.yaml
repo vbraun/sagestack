@@ -1,0 +1,19 @@
+sage:   # for the Sage UI only
+  name: sagetex
+  category: standard
+
+
+extends:
+- spkg_install
+
+
+
+dependencies:
+  build: [python, maxima, scipy, matplotlib, pillow, tachyon]
+  run: [python, maxima, scipy, matplotlib, pillow, tachyon]
+
+sources:
+- url: http://www.sagemath.org/packages/upstream/sagetex/sagetex-2.3.4.tar.bz2
+  key: tar.bz2:q3waq33u2i6g7b34dwlx526p4vylvbgk
+
+
